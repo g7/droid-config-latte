@@ -1,0 +1,1 @@
+CONFIG="-n --file=/etc/pulse/ia32_rt5659_soundcard.pa"
