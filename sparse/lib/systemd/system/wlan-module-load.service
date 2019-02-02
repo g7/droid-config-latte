@@ -1,0 +1,12 @@
+[Unit]
+Description=Load wifi module
+After=local-fs.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStartPre=/bin/sleep 5
+ExecStart=/sbin/modprobe bcmdhd firmware_path=/system/vendor/firmware/brcm/fw_bcmdhd_4356a2_pcie.bin nvram_path=/system/vendor/firmware/brcm/nvram_pcie_4356_a2.cal
+
+[Install]
+WantedBy=network.target
