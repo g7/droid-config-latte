@@ -12,7 +12,7 @@ Requires:
 - droid-config-latte-policy-settings
 - droid-config-latte-preinit-plugin
 - droid-config-latte-flashing
-- droid-config-latte-bluez4
+- droid-config-latte-bluez5
 - droid-hal-version-latte
 - droid-hal-latte-detritus
 
@@ -30,6 +30,10 @@ Requires:
 
 # Needed for /dev/touchscreen symlink
 - qt5-plugin-generic-evdev
+
+# bluetooth tools
+- bluez5-tools
+- broadcom-bluetooth
 
 - pulseaudio-modules-droid
 # for audio recording to work:
