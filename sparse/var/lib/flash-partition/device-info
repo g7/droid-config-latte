@@ -1,0 +1,7 @@
+CPUCHECK_STRING="Intel(R) Atom(TM) x5-Z8500  CPU @ 1.44GHz"
+
+PART_1="boot"
+
+PART_REAL_1="mmcblk0p9"
+
+PART_I="1"
