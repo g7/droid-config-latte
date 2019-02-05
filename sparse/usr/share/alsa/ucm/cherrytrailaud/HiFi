@@ -1,0 +1,103 @@
+SectionVerb {
+	EnableSequence [
+		cdev "hw:cherrytrailaud"
+		exec "echo HiFi enable sequence"
+
+		cset "name='DAC1 MIXL DAC1 Switch' 1"
+		cset "name='DAC1 MIXR DAC1 Switch' 1"
+		cset "name='Headphone Switch' 0"
+
+		cset "name='codec_out0 mix 0 pcm1_in' 1"
+		cset "name='pcm1_in gain 0 volume' 0 0"
+		cset "name='pcm1_in gain 0 rampduration' 5"
+		cset "name='pcm1_in gain 0 mute' 0"
+		cset "name='codec_out0 gain 0 volume' 0 0"
+		cset "name='codec_out0 gain 0 rampduration' 5"
+		cset "name='codec_out0 gain 0 mute' 0"
+	]
+
+	DisableSequence [
+		cdev "hw:cherrytrailaud"
+		exec "echo HiFi disable sequence"
+
+		cset "name='DAC1 MIXL DAC1 Switch' 0"
+		cset "name='DAC1 MIXR DAC1 Switch' 0"
+		cset "name='Headphone Switch' 0"
+
+		cset "name='codec_out0 mix 0 pcm1_in' 0"
+		cset "name='pcm1_in gain 0 volume' 0 0"
+		cset "name='pcm1_in gain 0 rampduration' 5"
+		cset "name='pcm1_in gain 0 mute' 1"
+		cset "name='codec_out0 gain 0 volume' 0 0"
+		cset "name='codec_out0 gain 0 rampduration' 5"
+		cset "name='codec_out0 gain 0 mute' 1"
+
+	]
+
+	Value {
+		PlaybackPCM "hw:cherrytrailaud"
+		CapturePCM "hw:cherrytrailaud"
+	}
+}
+
+SectionDevice."Headphones" {
+	Comment "Headphones playback"
+
+	Value {
+		PlaybackChannels "2"
+	}
+
+	ConflictingDevice [
+		"Speakers"
+	]
+
+	EnableSequence [
+		cdev "hw:cherrytrailaud"
+		exec "echo Headphones enable sequence"
+		cset "name='Headphone Switch' 1"
+		cset "name='Stereo DAC MIXL DAC L1 Switch' 1"
+		cset "name='Stereo DAC MIXR DAC R1 Switch' 1"
+		cset "name='IF2 ADC Mux' IF_ADC3"
+	]
+
+	DisableSequence [
+		cdev "hw:cherrytrailaud"
+		exec "echo Headphones disable sequence"
+		cset "name='Headphone Switch' 0"
+		cset "name='Stereo DAC MIXL DAC L1 Switch' 0"
+		cset "name='Stereo DAC MIXR DAC R1 Switch' 0"
+		cset "name='IF2 ADC Mux' DAC_REF"
+	]
+}
+
+SectionDevice."Speakers" {
+	Comment "Speaker playback"
+
+	Value {
+		PlaybackChannels "2"
+	}
+
+	ConflictingDevice [
+		"Headphones"
+	]
+
+	EnableSequence [
+		cdev "hw:cherrytrailaud"
+		exec "echo Speaker enable sequence"
+		cset "name='Ext Spk Switch' on"
+
+		cset "name='left Stop' 0"
+		cset "name='right Stop' 0"
+
+		cset "name='DAC1 Playback Volume' 170 170"
+	]
+
+	DisableSequence [
+		cdev "hw:cherrytrailaud"
+		cset "name='Ext Spk Switch' off"
+
+		cset "name='left Stop' 1"
+		cset "name='right Stop' 1"
+	]
+}
+
