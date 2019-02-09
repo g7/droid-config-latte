@@ -16,13 +16,17 @@ Requires:
 - droid-hal-version-latte
 - droid-hal-latte-detritus
 
-# Hybris packages
-- libhybris-libEGL
-- libhybris-libGLESv2
-- libhybris-libwayland-egl
+# Graphics (mesa)
+- mesa-i915
+- mesa-i915-dri-i915-driver
+- mesa-i915-libEGL
+- mesa-i915-libGLESv2
+- mesa-i915-libgbm
+- mesa-i915-libglapi
+- mesa-i915-libwayland-egl
 
 # Sensors
-- hybris-libsensorfw-qt5
+- sensorfw-qt5
 
 # Vibra
 #- ngfd-plugin-droid-vibrator
@@ -35,14 +39,13 @@ Requires:
 - bluez5-tools
 - broadcom-bluetooth
 
-- pulseaudio-modules-droid
+- pulseaudio-modules-droid-keepalive
 # for audio recording to work:
 - qt5-qtmultimedia-plugin-mediaservice-gstmediacapture
 
 # These need to be per-device due to differing backends (fbdev, eglfs, hwc, ..?)
 - qt5-qtwayland-wayland_egl
-- qt5-qpa-hwcomposer-plugin
-- qtscenegraph-adaptation
+- qt5-plugin-platform-eglfs
 
 # Add GStreamer v1.0 as standard
 - gstreamer1.0
@@ -56,7 +59,7 @@ Requires:
 #- gstreamer1.0-droid
 
 # This is needed for notification LEDs
-- mce-plugin-libhybris
+- mce-plugin-libhybris-nondroid
 
 ## USB mode controller
 # Enables mode selector upon plugging USB cable:
@@ -68,7 +71,7 @@ Requires:
 # might need some configuration to get working
 #- usb-moded-mass-storage-android-config
 # working but careful with roaming!
-- usb-moded-connection-sharing-android-config
+#- usb-moded-connection-sharing-android-config
 # android diag mode only usable for certain android tools
 #- usb-moded-diag-mode-android
 
