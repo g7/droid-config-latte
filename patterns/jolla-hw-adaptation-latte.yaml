@@ -26,7 +26,7 @@ Requires:
 - mesa-i915-libwayland-egl
 
 # Sensors
-- hybris-libsensorfw-qt5
+- sensorfw-qt5
 
 # Vibra
 #- ngfd-plugin-droid-vibrator
@@ -39,7 +39,7 @@ Requires:
 - bluez5-tools
 - broadcom-bluetooth
 
-- pulseaudio-modules-droid
+- pulseaudio-modules-droid-keepalive
 # for audio recording to work:
 - qt5-qtmultimedia-plugin-mediaservice-gstmediacapture
 
@@ -59,7 +59,7 @@ Requires:
 #- gstreamer1.0-droid
 
 # This is needed for notification LEDs
-- mce-plugin-libhybris
+- mce-plugin-libhybris-nondroid
 
 ## USB mode controller
 # Enables mode selector upon plugging USB cable:
