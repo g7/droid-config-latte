@@ -13,6 +13,7 @@ Requires:
 - pattern:sailfish-porter-tools
 
 - sailfish-content-graphics-z@ICON_RES@
+- sailfish-content-graphics-default-z1.5-large
 
 # For multi-SIM devices
 #- jolla-settings-networking-multisim
