@@ -38,6 +38,7 @@ Requires:
 # bluetooth tools
 - bluez5-tools
 - broadcom-bluetooth
+- bluetooth-rfkill-event-hciattach
 
 - pulseaudio-modules-droid-keepalive
 # for audio recording to work:
