@@ -5,7 +5,7 @@ After=local-fs.target
 
 [Service]
 Type=oneshot
-ExecStart=/bin/sh /usr/bin/droid/droid-hci-up.sh
+ExecStart=/bin/sh /usr/bin/droid/droid-bt-mac.sh
 RemainAfterExit=yes
 TimeoutStartSec=60
 

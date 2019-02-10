@@ -32,5 +32,3 @@ if [ -e "/data/misc/bluetooth/bluetooth_bdaddr" ]; then
     fi
 fi
 
-/usr/sbin/brcm_patchram_plus --patchram $firmware --no2bytes --baudrate $baudrate --use_baudrate_for_download $device --bd_addr $addr --enable_hci &
-
