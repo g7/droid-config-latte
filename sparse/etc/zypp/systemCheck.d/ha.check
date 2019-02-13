@@ -1,0 +1,11 @@
+requires:droid-config-@DEVICE@
+requires:droid-hal
+requires:droid-hal-img-boot
+requires:droid-hal-version-@DEVICE@
+requires:mesa-i915
+requires:mesa-i915-dri-i915-driver
+requires:mesa-i915-libEGL
+requires:mesa-i915-libGLESv2
+requires:mesa-i915-libgbm
+requires:mesa-i915-libglapi
+requires:mesa-i915-libwayland-egl
