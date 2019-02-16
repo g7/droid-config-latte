@@ -10,4 +10,4 @@ RemainAfterExit=yes
 TimeoutStartSec=60
 
 [Install]
-WantedBy=bluetooth.service
+WantedBy=network.target
