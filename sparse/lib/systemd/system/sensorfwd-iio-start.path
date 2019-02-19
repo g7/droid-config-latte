@@ -1,0 +1,10 @@
+[Unit]
+Description=Workaround to make sensorfwd start once the iio devices are ready
+Requires=systemd-modules-load.service
+
+[Path]
+Unit=sensorfwd.service
+PathExists=/dev/iio:device1
+
+[Install]
+WantedBy=graphical.target
