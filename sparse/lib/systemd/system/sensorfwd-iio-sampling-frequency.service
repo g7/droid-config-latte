@@ -1,0 +1,11 @@
+[Unit]
+Description=Increases sampling frequency of the IIO accelerometer
+Requires=sensorfwd.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/usr/bin/droid/iio_increase_sampling_frequency.sh
+
+[Install]
+WantedBy=graphical.target
