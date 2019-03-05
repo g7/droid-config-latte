@@ -1,0 +1,1 @@
+SUBSYSTEM=="iio", ACTION=="add", TAG+="systemd" 
