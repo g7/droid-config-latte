@@ -1,6 +1,9 @@
 [Unit]
 Description=Increases sampling frequency of the IIO accelerometer
-Requires=sensorfwd.service
+Before=sensorfwd.service
+Wants=dev-iio:device4.device
+After=dev-iio:device4.device
+
 
 [Service]
 Type=oneshot
