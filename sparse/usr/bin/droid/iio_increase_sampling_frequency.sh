@@ -8,7 +8,7 @@ error() {
 # systemd is dumb and doesn't support Restart=on-failure on oneshot scripts...
 for try in $(seq 5); do
 
-	sampling_frequency_file=$(find /sys/bus/iio/devices -type f -name in_accel_sampling_frequency -follow -maxdepth 1 2> /dev/null | head -n1)
+	sampling_frequency_file=$(find /sys/bus/iio/devices -type f -name in_accel_sampling_frequency -follow -maxdepth 2 2> /dev/null | head -n1)
 
 	if [ "${sampling_frequency_file}" ]; then
 	        echo 100 > ${sampling_frequency_file}
